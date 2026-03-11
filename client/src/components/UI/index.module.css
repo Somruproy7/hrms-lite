@@ -1,0 +1,246 @@
+/* Spinner */
+.spinner {
+  border: 2px solid rgba(255,255,255,0.1);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+.spinner--sm { width: 14px; height: 14px; }
+.spinner--md { width: 24px; height: 24px; }
+.spinner--lg { width: 40px; height: 40px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  gap: 12px;
+}
+.emptyIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--bg-hover);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.emptyTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.emptyDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+.emptyAction { margin-top: 8px; }
+
+/* Error State */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  gap: 10px;
+}
+.errorIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--red-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.errorTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.errorMsg {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 340px;
+}
+.retryBtn {
+  margin-top: 8px;
+  padding: 8px 20px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-active);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.retryBtn:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.badgeGreen { background: var(--green-light); color: var(--green); }
+.badgeRed { background: var(--red-light); color: var(--red); }
+.badgeBlue { background: var(--accent-light); color: var(--accent); }
+.badgePurple { background: rgba(168,85,247,0.12); color: #a855f7; }
+.badgeAmber { background: var(--amber-light); color: var(--amber); }
+.badgePink { background: rgba(236,72,153,0.1); color: #ec4899; }
+.badgeTeal { background: rgba(20,184,166,0.1); color: #14b8a6; }
+.badgeOrange { background: rgba(249,115,22,0.1); color: #f97316; }
+.badgeCyan { background: rgba(6,182,212,0.1); color: #06b6d4; }
+.badgeGray { background: rgba(100,116,139,0.1); color: #94a3b8; }
+
+/* Stat Card */
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.statCard:hover { border-color: var(--border-active); }
+.statHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.statLabel {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.statIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statCard--blue .statIcon { background: var(--accent-light); color: var(--accent); }
+.statCard--green .statIcon { background: var(--green-light); color: var(--green); }
+.statCard--red .statIcon { background: var(--red-light); color: var(--red); }
+.statCard--amber .statIcon { background: var(--amber-light); color: var(--amber); }
+.statValue {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+.statTrend {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: slideUp 0.2s ease;
+}
+.modalSm { max-width: 380px; }
+@keyframes slideUp { from { transform: translateY(12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 0;
+}
+.modalTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.modalClose {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.modalClose:hover { background: var(--bg-hover); color: var(--text-primary); }
+.modalBody { padding: 20px 24px 24px; }
+
+/* Confirm */
+.confirmMsg {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.confirmActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.btnSecondary {
+  padding: 9px 18px;
+  background: transparent;
+  border: 1px solid var(--border-active);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.btnSecondary:hover { background: var(--bg-hover); }
+.btnDanger {
+  padding: 9px 18px;
+  background: var(--red);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btnDanger:hover:not(:disabled) { background: #dc2626; }
+.btnDanger:disabled { opacity: 0.6; cursor: not-allowed; }

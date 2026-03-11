@@ -1,0 +1,12 @@
+{
+  "name": "hrms-lite",
+  "version": "1.0.0",
+  "description": "HRMS Lite – React + FastAPI + MongoDB",
+  "private": true,
+  "scripts": {
+    "dev:server":   "cd server && uvicorn app.main:app --reload --port 5000",
+    "dev:client":   "cd client && npm start",
+    "install:client": "npm install --prefix client",
+    "build:client": "npm run build --prefix client"
+  }
+}

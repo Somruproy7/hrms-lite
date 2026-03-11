@@ -1,0 +1,201 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+.center { display: flex; align-items: center; justify-content: center; padding: 80px; }
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.breadLink { color: var(--accent); font-weight: 500; }
+.breadLink:hover { text-decoration: underline; }
+
+.profileCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profileLeft { display: flex; align-items: center; gap: 18px; }
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(91,110,245,0.2);
+}
+
+.name {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+
+.empId {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: monospace;
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: transparent;
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 9px;
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.deleteBtn:hover { background: var(--red-light); border-color: var(--red); }
+
+/* Stats row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.statBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.statVal {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+.statGreen { color: var(--green); }
+.statRed { color: var(--red); }
+
+/* Section */
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.filterInput {
+  padding: 7px 11px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+.filterInput:focus { border-color: var(--accent); }
+
+.clearBtn {
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid var(--border-active);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.clearBtn:hover { color: var(--text-primary); }
+
+/* Records grid */
+.records {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.record {
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+.recordGreen { background: var(--green-light); border-color: rgba(34,197,94,0.15); }
+.recordRed { background: var(--red-light); border-color: rgba(239,68,68,0.15); }
+
+.recordDate {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .profileCard { flex-direction: column; align-items: flex-start; }
+  .statsRow { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .statsRow { grid-template-columns: 1fr 1fr; }
+  .records { grid-template-columns: 1fr 1fr; }
+}
