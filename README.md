@@ -195,29 +195,6 @@ npm start
 
 ---
 
-## Deployment
-
-### Backend → Render
-
-1. Push repo to GitHub
-2. New **Web Service** on [render.com](https://render.com), root directory: `server`
-3. Runtime: **Python 3**
-4. Build command: `pip install -r requirements.txt`
-5. Start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-6. Environment variables:
-   - `MONGODB_URI` — Atlas connection string
-   - `DATABASE_NAME` = `hrms-lite`
-   - `FRONTEND_URL` — Vercel URL (update after step below)
-
-### Frontend → Vercel
-
-1. New project on [vercel.com](https://vercel.com), root directory: `client`
-2. Add environment variable:
-   - `REACT_APP_API_URL` = `https://your-render-app.onrender.com/api`
-3. Deploy → copy Vercel URL → update `FRONTEND_URL` on Render
-
----
-
 ## Assumptions & Limitations
 
 - Single admin user — no authentication (out of scope per spec)
