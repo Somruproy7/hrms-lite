@@ -114,7 +114,7 @@ export default function Dashboard() {
           ) : (
             <div className={styles.attendanceList}>
               {recentAttendance.map((r) => (
-                <div key={r._id} className={styles.attRow}>
+                <div key={r.id} className={styles.attRow}>
                   <div className={styles.attAvatar}>
                     {r.employee?.fullName?.[0] ?? '?'}
                   </div>
