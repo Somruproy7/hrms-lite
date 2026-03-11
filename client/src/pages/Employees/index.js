@@ -131,7 +131,7 @@ export default function Employees() {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      await employeeAPI.delete(deleteTarget._id);
+      await employeeAPI.delete(deleteTarget.id);
       toast.success('Employee deleted');
       setDeleteTarget(null);
       fetchEmployees();
@@ -201,7 +201,7 @@ export default function Employees() {
             </thead>
             <tbody>
               {filtered.map((emp) => (
-                <tr key={emp._id}>
+                <tr key={emp.id}>
                   <td>
                     <div className={styles.empCell}>
                       <div className={styles.empAvatar}>{emp.fullName[0]}</div>
@@ -221,7 +221,7 @@ export default function Employees() {
                   </td>
                   <td>
                     <div className={styles.actions}>
-                      <Link to={`/employees/${emp._id}`} className={styles.viewBtn}>View</Link>
+                      <Link to={`/employees/${emp.id}`} className={styles.viewBtn}>View</Link>
                       <button
                         className={styles.deleteBtn}
                         onClick={() => setDeleteTarget(emp)}
