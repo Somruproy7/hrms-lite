@@ -50,7 +50,7 @@ function MarkAttendanceForm({ employees, onSuccess, onClose }) {
         >
           <option value="">Select employee...</option>
           {employees.map((e) => (
-            <option key={e._id} value={e._id}>
+            <option key={e.id} value={e.id}>
               {e.fullName} ({e.employeeId}) — {e.department}
             </option>
           ))}
@@ -155,7 +155,7 @@ export default function Attendance() {
           >
             <option value="">All Employees</option>
             {employees.map((e) => (
-              <option key={e._id} value={e._id}>{e.fullName}</option>
+              <option key={e.id} value={e.id}>{e.fullName}</option>
             ))}
           </select>
           <select
@@ -219,7 +219,7 @@ export default function Attendance() {
             </thead>
             <tbody>
               {filtered.map((r) => (
-                <tr key={r._id}>
+                <tr key={r.id}>
                   <td>
                     <div className={styles.empCell}>
                       <div className={`${styles.empAvatar} ${r.status === 'Present' ? styles.avatarGreen : styles.avatarRed}`}>
