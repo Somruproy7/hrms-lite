@@ -143,7 +143,7 @@ export default function EmployeeDetail() {
         ) : (
           <div className={styles.records}>
             {attendance.map((r) => (
-              <div key={r._id} className={`${styles.record} ${r.status === 'Present' ? styles.recordGreen : styles.recordRed}`}>
+              <div key={r.id} className={`${styles.record} ${r.status === 'Present' ? styles.recordGreen : styles.recordRed}`}>
                 <span className={styles.recordDate}>{r.date}</span>
                 <Badge status={r.status} />
               </div>
