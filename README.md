@@ -1,6 +1,7 @@
 # HRMS Lite — Human Resource Management System
 
-A lightweight, production-grade HR management tool built with **React**, **FastAPI**, and **MongoDB**.
+A lightweight, production-grade HR management tool built with **React**, **FastAPI**, and **MongoDB**.\
+Live URL :- https://hrms-lite-9355.vercel.app/dashboard
 
 ---
 
